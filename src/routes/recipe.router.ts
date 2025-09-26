@@ -11,7 +11,7 @@ router.get('/', RecipeController.getAll);
 router.get('/search', RecipeController.searchRecipe);
 router.get('/:id', RecipeController.getById);
 router.delete('/:id', authMiddleware, RecipeController.delete);
-
+router.get('/me/mine', authMiddleware, RecipeController.getMyRecipes);
 
 router.post('/:id/ratings', authMiddleware, RatingController.setRating);
 router.get('/:id/ratings/avg', RatingController.average); 

@@ -55,6 +55,18 @@ export class RecipeController {
         }
     }
 
+
+     static async getMyRecipes(req: AuthRequest, res: Response) {
+        try {
+            if (!req.user) return res.status(401).json({ error: 'Unauthorized' });
+            const recipes = await RecipeService.getByUser(req.user.id);
+            res.json(recipes);
+        } catch (error) {
+            
+        }
+        
+    }
+
     static async delete(req: AuthRequest, res: Response) {
         try {
             if (!req.user) return res.status(401).json({ error: 'Unauthorized' });
