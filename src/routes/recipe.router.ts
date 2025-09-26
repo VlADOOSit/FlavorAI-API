@@ -10,6 +10,7 @@ router.post('/', authMiddleware, RecipeController.addRecipe);
 router.get('/', RecipeController.getAll);
 router.get('/search', RecipeController.searchRecipe);
 router.get('/:id', RecipeController.getById);
+router.delete('/:id', authMiddleware, RecipeController.delete);
 
 
 router.post('/:id/ratings', authMiddleware, RatingController.setRating);

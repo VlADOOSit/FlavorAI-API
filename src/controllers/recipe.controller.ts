@@ -54,4 +54,18 @@ export class RecipeController {
             res.status(500).json({ error: 'Internal server error' });
         }
     }
+
+    static async delete(req: AuthRequest, res: Response) {
+        try {
+            if (!req.user) return res.status(401).json({ error: 'Unauthorized' });
+            const deleted = await RecipeService.delete(Number(req.params.id), req.user.id);
+            if (deleted.count === 0) {
+                return res.status(403).json({ error: 'Not allowed or recipe not found' });
+            }
+            res.json({ message: 'Deleted successfully' });
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ error: 'Internal server error' });
+        }    
+    }
 }

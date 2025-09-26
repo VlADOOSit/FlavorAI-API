@@ -50,4 +50,10 @@ export class RecipeService {
             },
         });
     }
+
+    async delete(id: number, userId: number) {
+        return prisma.recipe.deleteMany({
+            where: { id, authorId: userId },
+        });
+    }
 }
