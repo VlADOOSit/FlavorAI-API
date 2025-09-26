@@ -1,5 +1,7 @@
 # FlavorAI-API
 
+Functionality: https://youtu.be/gwtew83Ctcc
+
 For start
 
 Backend:
