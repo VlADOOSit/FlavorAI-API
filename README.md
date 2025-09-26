@@ -40,3 +40,18 @@ For start:
 ```
 npm start
 ```
+
+This project is a full-stack web application for managing and rating cooking recipes.
+It is built with Node.js, Express, Prisma, and PostgreSQL on the backend, and React, TypeScript, and TailwindCSS on the frontend.
+
+Key Features
+
+Authentication middleware – basic user authentication with protected routes.
+
+Recipe management – create, view, and search recipes.
+
+Rating system – users can rate recipes (1–5 stars) and see the average score.
+
+Frontend UI – responsive React + TailwindCSS interface with navigation header, recipe list, recipe details, and rating functionality.
+
+I tried to implement all the required functionality. The frontend is kept quite simple due to limited time, but I focused on covering the main features.
